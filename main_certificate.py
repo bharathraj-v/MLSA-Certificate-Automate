@@ -50,7 +50,7 @@ def create_docx_files(filename, list_participate, ambassador):
 
         # ! if your program working slowly, comment this two line and open other 2 line.
         print("Output/{}.pdf Creating".format(name))
-        convert('Output/Doc/{}.docx'.format(name), 'Output/Pdf/{}.pdf'.format(name))
+        convert('Output/Doc/{}.docx'.format(name), 'Output/Pdf/')
 
         # ! Open those lines and comment above 2 lines if your program working extremely slow
         # os.system("docx2pdf Output/Doc/")
