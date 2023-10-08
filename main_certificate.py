@@ -4,8 +4,19 @@ import os
 from certificate import *
 from docx import Document
 import csv
-from docx2pdf import convert
 
+import subprocess
+
+def convert(doc_path, path):
+
+    subprocess.call(['soffice',
+                 # '--headless',
+                 '--convert-to',
+                 'pdf',
+                 '--outdir',
+                 path,
+                 doc_path])
+    return doc_path
 
 # create output folder if not exist
 try:
@@ -52,7 +63,7 @@ certificate_file = "Data Template/Event Certificate Template.docx"
 participate_file = "Data Template/Event Participate Template.csv"
 
 # Enter your name here [Ambassador Name]
-ambassador_name = "Your Name"
+ambassador_name = "Sai Snehitha"
 
 # get participants
 list_participate = get_participants(participate_file);
